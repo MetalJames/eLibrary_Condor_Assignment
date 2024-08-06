@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useBookContext } from '../context/BookContext';
 
@@ -29,6 +29,7 @@ const books: Book[] = [
     { id: 10, title: 'Frankenstein', author: 'Mary Shelley', genre: 'Horror', available: true, cost: 5, rentalPeriod: '2 weeks', additionalInfo: 'A novel about a scientist who creates a sentient creature.' },
     { id: 11, title: 'Dracula', author: 'Bram Stoker', genre: 'Horror', available: false, cost: 7, rentalPeriod: '1 month', additionalInfo: 'A novel about the infamous vampire Count Dracula.' },
     { id: 12, title: 'The Chronicles of Narnia', author: 'C.S. Lewis', genre: 'Fantasy', available: true, cost: 6, rentalPeriod: '1 month', additionalInfo: 'A series of fantasy novels set in the magical land of Narnia.' },
+    { id: 13, title: 'Treasure Island', author: 'Robert Louis Stevenson', genre: 'Adventure', available: true, cost: 5,rentalPeriod: '2 weeks', additionalInfo: 'A classic adventure novel about pirates and buried treasure.' },
 ];
 
 const SeeBookDetailes: React.FC = () => {
@@ -40,9 +41,22 @@ const SeeBookDetailes: React.FC = () => {
 
     const { selectedBooks, addBook } = useBookContext();
 
+    // Modal to let customer know he have added his book to his rent book cart
+    // Add this state for managing the modal visibility
+    const [showModal, setShowModal] = useState(false);
+
+    // Function to show the modal
+    const showModalWithTimeout = () => {
+        setShowModal(true);
+        setTimeout(() => {
+            setShowModal(false);
+        }, 3000); // Hide the modal after 3 seconds
+    };
+
     const handleAddToRent = (bookId: number) => {
         addBook(bookId);
-        alert('Added to rental list!');
+        //alert('Added to rental list!');
+        showModalWithTimeout();
     };
 
     if (!book) {
@@ -74,6 +88,13 @@ const SeeBookDetailes: React.FC = () => {
                     </button>
                 </div>
             </div>
+            {showModal && (
+                <div className="modal-wrapper fixed top-16 left-1/2 transform -translate-x-1/2 z-50">
+                    <div className="bg-blue-500 text-white p-4 rounded shadow-lg">
+                        Added to rental list!
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

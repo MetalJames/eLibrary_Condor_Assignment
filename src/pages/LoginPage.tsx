@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
+import { ModalDemo } from '../components/';
 
 const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        // Add login logic here
-        alert('Login successful');
+        //alert('Login successful');
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setEmail('');
+        setPassword('');
     };
 
     return (
-        <div className="container mx-auto p-4 flex flex-col md:flex-row items-stretch justify-center py-40">
+        <div className="container mx-auto p-4 flex flex-col md:flex-row items-stretch justify-center sm:py-40 py-2">
             {/* Main Content */}
             <div className="flex flex-col flex-1 w-full md:w-1/2 max-w-md p-4 bg-white shadow-md rounded mr-10">
                 <h2 className="text-2xl font-semibold mb-4">Login</h2>
@@ -41,7 +49,7 @@ const LoginPage: React.FC = () => {
             </div>
 
             {/* Aside Section */}
-            <aside className="flex-1 mt-8 md:mt-0 md:w-1/2 max-w-md p-4 bg-gray-100 border border-gray-200 rounded shadow-md ml-10">
+            <aside className="flex-1 mt-8 md:mt-0 md:w-1/2 max-w-md p-4 bg-gray-100 border border-gray-200 rounded shadow-md sm:ml-10 ml-0">
                 <h3 className="text-xl font-semibold mb-2">Welcome to Your Catalogue!</h3>
                 <p className="mb-2">Here's what's for you…</p>
                 <ul className="list-disc ml-4 space-y-2">
@@ -51,6 +59,8 @@ const LoginPage: React.FC = () => {
                     <li>Get personalized recommendations.</li>
                 </ul>
             </aside>
+
+            <ModalDemo isOpen={isModalOpen} onClose={closeModal} text='Login' />
         </div>
     );
 };

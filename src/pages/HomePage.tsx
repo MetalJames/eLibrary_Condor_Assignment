@@ -5,12 +5,13 @@ import { HeroBanner } from '../assets/'
 const HomePage: React.FC = () => {
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">Welcome to Condor eLibrary</h1>
-            <p className="mb-8">
-            Condor eLibrary is your one-stop destination for accessing a wide
-            variety of books online. Whether you want to rent books or simply
-            browse through our extensive collection, we have something for
-            everyone.
+            <h1 className="text-3xl font-bold mb-4 px-4">Welcome to Condor eLibrary</h1>
+            <p className="mb-8 px-4">
+                Condor eLibrary is your one-stop destination for accessing a wide
+                variety of books online. Whether you want to rent books or simply
+                browse through our extensive collection, we have something for
+                everyone. Our user-friendly platform makes it easy to find and enjoy
+                your next great read. Join our community of book lovers today!
             </p>
 
             <div className="flex flex-col md:flex-row">
@@ -23,10 +24,13 @@ const HomePage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <ul className="space-y-2">
                             <li>10K+ Editorially maintained Research Topic pages</li>
+                            <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                             <li>7M+ Rights-cleared photos and graphics</li>
+                            <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                         </ul>
                         <ul className="space-y-2">
                             <li>200+ Newspapers</li>
+                            <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                             <li>160+ Encyclopedias and other reference books</li>
                         </ul>
                     </div>
@@ -63,6 +67,7 @@ const HomePage: React.FC = () => {
                             Research Success
                         </h3>
                     </div>
+                    <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                     <div>
                         <h3 className="text-xl font-semibold">
                             Age-Appropriate Content
@@ -72,6 +77,7 @@ const HomePage: React.FC = () => {
                             and aligned with classroom assignments
                         </p>
                     </div>
+                    <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                     <div>
                         <h3 className="text-xl font-semibold">Outcome-Oriented</h3>
                         <p>
@@ -79,6 +85,7 @@ const HomePage: React.FC = () => {
                             classrooms with interactive media
                         </p>
                     </div>
+                    <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                     <div>
                         <h3 className="text-xl font-semibold">
                             Workflows That Guide Novice Users
@@ -89,6 +96,7 @@ const HomePage: React.FC = () => {
                             time efficiently
                         </p>
                     </div>
+                    <hr className="border-t-2 border-gray-300 my-6 sm:hidden" />
                     <div>
                         <h3 className="text-xl font-semibold">
                             Modern, Intuitive, Responsive and Accessible

@@ -1,20 +1,19 @@
 import "./index.css";
 import { BrowserRouter, Route, Routes  } from "react-router-dom";
-import Header from "./components/Header";
-import { LoginPage, SignUpPage, ViewBooksPage, RentBooksPage, HomePage, AboutUsPage, ContactUsPage } from "./pages/";
-import Footer from "./pages/Footer";
-import { BookProvider } from "./context/BookContext"; 
-import SeeBookDetailes from "./pages/SeeBookDetailes";
+import { LoginPage, SignUpPage, ViewBooksPage, RentBooksPage, HomePage, AboutUsPage, ContactUsPage, SeeBookDetailes } from "./pages/";
+import { BookProvider } from "./context/BookContext";
+import { Header, Footer, ScrollToTheTop } from "./components";
 
 function App() {
   return (
     <div className="flex flex-col h-screen">
       <BrowserRouter>
         <BookProvider>
-          <header className="sticky top-0">
+          <ScrollToTheTop />
+          <header className="fixed w-full sm:sticky top-0">
             <Header />
           </header>
-          <main className="flex-grow">
+          <main className="flex-grow mt-20 sm:mt-0">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />

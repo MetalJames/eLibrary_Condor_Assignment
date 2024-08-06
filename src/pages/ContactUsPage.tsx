@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUsPage: React.FC = () => {
     return (
         <div className="container mx-auto p-4">
-            <div className="bg-white p-6 shadow-md rounded">
+            <div className="bg-white p-4 shadow-md rounded">
                 <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
 
                 <section className="mb-6">
@@ -17,7 +17,7 @@ const ContactUsPage: React.FC = () => {
                         <li>Address: 123 Book Street, Bibliopolis, BC, 12345</li>
                     </ul>
                 </section>
-
+                <hr className="border-t-2 border-gray-300 my-6" />
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold mb-2">Business Hours</h2>
                     <p className="text-gray-700">
@@ -29,7 +29,7 @@ const ContactUsPage: React.FC = () => {
                         <li>Sunday: Closed</li>
                     </ul>
                 </section>
-
+                <hr className="border-t-2 border-gray-300 my-6" />
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Feedback and Suggestions</h2>
                     <p className="text-gray-700">

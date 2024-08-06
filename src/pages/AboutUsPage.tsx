@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUsPage: React.FC = () => {
     return (
         <div className="container mx-auto p-4">
-            <div className="bg-white p-6 shadow-md rounded">
+            <div className="bg-white p-4 shadow-md rounded">
                 <h1 className="text-3xl font-bold mb-4">About Us</h1>
 
                 <section className="mb-6">
@@ -12,14 +12,14 @@ const AboutUsPage: React.FC = () => {
                         Our mission is to provide a seamless and enriching reading experience by offering a wide selection of books for rent. We aim to make literature accessible to everyone and foster a love for reading through convenience and affordability.
                     </p>
                 </section>
-
+                <hr className="border-t-2 border-gray-300 my-6" />
                 <section className="mb-6">
                     <h2 className="text-2xl font-semibold mb-2">Our Team</h2>
                     <p className="text-gray-700">
                         We are a dedicated team of book enthusiasts who believe in the power of literature. Our team comprises experienced professionals in the fields of publishing, technology, and customer service, all working together to ensure you have the best possible experience.
                     </p>
                 </section>
-
+                <hr className="border-t-2 border-gray-300 my-6" />
                 <section>
                     <h2 className="text-2xl font-semibold mb-2">Our History</h2>
                     <p className="text-gray-700">

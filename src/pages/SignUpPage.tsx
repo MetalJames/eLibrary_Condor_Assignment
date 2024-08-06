@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ModalDemo } from '../components/';
 
 const SignUpPage: React.FC = () => {
     const [firstName, setFirstName] = useState('');
@@ -6,15 +7,25 @@ const SignUpPage: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleSignUp = (e: React.FormEvent) => {
         e.preventDefault();
-        // Add sign-up logic here
-        alert('Sign Up successful');
+        //alert('Sign Up successful');
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
     };
 
     return (
-        <div className="container mx-auto p-4 flex flex-col items-center py-[8rem]">
+        <div className="container mx-auto p-4 flex flex-col items-center sm:py-[8rem] pt-2">
             {/* Main Content */}
             <div className="flex flex-col w-full md:w-1/2 max-w-md p-4 bg-white shadow-md rounded">
                 <h2 className="text-3xl font-bold mb-4">Sign Up</h2>
@@ -75,6 +86,7 @@ const SignUpPage: React.FC = () => {
                 </form>
                 <p className="mt-4 italic">Yes, I want this ebook!</p>
             </div>
+            <ModalDemo isOpen={isModalOpen} onClose={closeModal} text='Sign Up' />
         </div>
     );
 };
