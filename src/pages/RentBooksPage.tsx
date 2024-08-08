@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useBookContext } from '../context/BookContext';
 import SuccessModal from '../components/SuccessModal';
 
@@ -71,7 +71,7 @@ const RentBooksPage: React.FC = () => {
         return (
             <div className="container mx-auto p-4 flex justify-center items-center">
                 <div className="bg-white p-6 shadow-md rounded w-full max-w-3xl">
-                    <p>No books selected. Please <a href="/view-books" className="text-blue-500 underline">browse our collection</a> to select books to rent.</p>
+                    <p>No books selected. Please <Link to="/view-books" className="text-blue-500 underline">browse our collection</Link> to select books to rent.</p>
                 </div>
             </div>
         );
