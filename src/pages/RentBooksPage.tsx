@@ -101,7 +101,7 @@ const RentBooksPage: React.FC = () => {
                                     onClick={() => handleRemoveBook(book.id)}
                                     className="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition duration-300"
                                 >
-                                    Remove Book
+                                    Remove
                                 </button>
                             )}
                         </div>
@@ -110,7 +110,7 @@ const RentBooksPage: React.FC = () => {
                         onClick={handleConfirmRental}
                         className="bg-blue-500 text-white p-2 rounded-lg w-full mt-4 hover:bg-blue-600 transition duration-300"
                     >
-                        Confirm Rental
+                        Confirm
                     </button>
                 </div>
                 {isModalOpen && (

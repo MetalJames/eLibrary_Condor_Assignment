@@ -137,13 +137,13 @@ const ViewBooksPage: React.FC = () => {
                                     disabled={selectedBooks.includes(book.id) || !book.available}
                                     onClick={() => handleAddToRent(book.id)}
                                 >
-                                    {selectedBooks.includes(book.id) ? 'Added' : 'Add to Rent'}
+                                    {selectedBooks.includes(book.id) ? 'Added' : 'Rent'}
                                 </button>
                                 <button
                                     className="bg-green-500 text-white p-3 rounded-lg flex-1 ml-4 transition duration-300 hover:bg-green-600"
                                     onClick={() => handleSeeBook(book.id)}
                                 >
-                                    See Details
+                                    Details
                                 </button>
                             </div>
                         </div>

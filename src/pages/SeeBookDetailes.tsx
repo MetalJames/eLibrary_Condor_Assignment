@@ -84,7 +84,7 @@ const SeeBookDetailes: React.FC = () => {
                         disabled={selectedBooks.includes(book.id) || !book.available}
                         onClick={() => handleAddToRent(book.id)}
                     >
-                        {selectedBooks.includes(book.id) ? 'Added' : 'Add to Rent'}
+                        {selectedBooks.includes(book.id) ? 'Added' : 'Rent'}
                     </button>
                 </div>
             </div>
